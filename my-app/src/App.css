@@ -1,5 +1,5 @@
 .App {
-  padding: 4rem 10rem;
+  padding: 4rem 20rem;
   display: flex;
   flex-direction: column;
 }
@@ -113,4 +113,118 @@
   .button_wide {
     width: 100%;
   }
+}
+
+/* question */
+
+.question {
+  width: 100%;
+  padding: 2rem 4rem;
+  background-color: #F9DABE;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.question__img-container {
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 5rem;
+  background-color: #E5E5E5;
+}
+
+.question__img {
+  height: 100%;
+  width: auto;
+}
+
+.question__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+/* answer field */
+
+.optionField {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.optionList {
+  margin: 0;
+  width: 60%;
+  background-color: #FFEBD8;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+.optionList > *:first-child {
+  padding-top: 2rem;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.optionList > *:last-child {
+  padding-bottom: 2rem;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.option {
+  list-style: none;
+  width: 100%;
+  padding: 1rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.option:hover {
+  background-color: #F9DABE;
+}
+
+.option__title {
+  font-size: 2rem;
+  line-height: 3.3rem;
+  margin: 0;
+}
+
+.option__checkbox {
+  width: 1rem;
+  height: 1rem;
+  box-sizing: border-box;
+  border: 0.1rem #000000 solid;
+  border-radius: 50%;
+  background-color: #B5B4F0;
+  margin-right: 2rem;
+}
+
+.option__checkbox.correct {
+  background-color: #CBFBCD;
+}
+
+.option__checkbox.incorrect {
+  background-color: #FF9B9B;
+}
+
+.option__info {
+  width: 40% - 1em;
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: #FFEBD8;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
