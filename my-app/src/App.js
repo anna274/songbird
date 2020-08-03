@@ -19,26 +19,18 @@ class App extends React.Component {
     this.state = {
       currentCategoryID: START_CATEGORY_ID,
       currentOption: null,
+      score: 0,
     }
-    this.score = 0;
     this.levelData = {};
     this.levelCompleted = false;
-    this.generateLevelData();
+    this.generateLevelData(this.state.currentCategoryID);
     this.nextHandler = this.nextHandler.bind(this);
     this.generateLevelData = this.generateLevelData.bind(this);
     this.chooseOption = this.chooseOption.bind(this);
   }
 
-  generateLevelData() {
-    // const options = categoriesData[0].data.map((option) => {
-    //   option.checked = false;
-    //   return option;
-    // })
-    // this.levelData = {
-    //   options,
-    //   answer: categoriesData[0].data[0],
-    // };
-    const allOptions = categoriesData.find((categoryData) => categoryData.categoryID === this.state.currentCategoryID).data;
+  generateLevelData(category) {
+    const allOptions = categoriesData.find((categoryData) => categoryData.categoryID === category).data;
     const allOptionsNumber = allOptions.length;
     const options = [];
     while(options.length < OPTIONS_NUMBER) {
@@ -49,8 +41,8 @@ class App extends React.Component {
     }
     const answerIndex = Math.floor(Math.random() * OPTIONS_NUMBER - 1);
     this.levelData = {
-      options,
-      answer: options[answerIndex],
+        options,
+        answer: options[answerIndex],
     };
   }
 
@@ -68,17 +60,21 @@ class App extends React.Component {
   }
 
   nextHandler() {
-    let nextCategory = categories.findIndex(category => category.id === this.state.currentCategoryID) + 1;
-    if (nextCategory < categories.length) {
-      this.setState({
-        currentCategory: categories.find(category => category.id === nextCategory).id
-      });
+    if(!this.levelCompleted) {
+      return;
     }
-    else {
-      this.setState({
-        currentCategory: START_CATEGORY_ID
-      });
+    let nextCategoryIndex = categories.findIndex(category => category.id === this.state.currentCategoryID) + 1;
+    let nextCategoryID = START_CATEGORY_ID;
+    if (nextCategoryIndex < categories.length) {
+      nextCategoryID = categories[nextCategoryIndex].id;
     }
+    console.log(nextCategoryID);
+    this.generateLevelData(nextCategoryID);
+    this.levelCompleted = false;
+    this.setState({
+      currentCategoryID: nextCategoryID,
+      currentOption: null,
+    });
   }
 
   render() {
@@ -94,7 +90,7 @@ class App extends React.Component {
             <OptionList options = { this.levelData.options } answerID = { this.levelData.answer.id } onClick = { this.chooseOption }/>
             <OptionInfo option = { this.state.currentOption }/>
           </div>
-          <NextButton onClick = {this.nextHandler}/>
+          <NextButton levelCompleted = { this.levelCompleted } onClick = {this.nextHandler}/>
         </main>
       </div>
     );

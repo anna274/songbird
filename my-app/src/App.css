@@ -67,12 +67,18 @@
 }
 
 .button_wide:hover {
+  background-color: #6e6ce9;
+}
+
+.button_disabled{
+  background-color: #B5B4F0;
+  cursor: auto;
+}
+
+.button_disabled:hover{
   background-color: #B5B4F0;
 }
 
-.button_disable {
-  background-color: #B5B4F0;
-}
 
 @media(max-width: 960px) {
   .App {

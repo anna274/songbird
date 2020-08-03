@@ -13,13 +13,14 @@ class Question extends React.Component {
           </div>
           <div>
             <h3 className="question__title">{ this.props.question.singer + ' - ' + this.props.question.songName}</h3>
-            <audio controls>
+            <audio key ={ this.props.question.id } controls>
               <source src={ process.env.PUBLIC_URL + this.props.question.songAudio } />
             </audio>
           </div>
         </div>
       );
     } else {
+      console.log(this.props.question.songAudio);
       return (
         <div className="question">
           <div className="question__img-container">
@@ -27,7 +28,7 @@ class Question extends React.Component {
           </div>
           <div>
             <h3 className="question__title">*******</h3>
-            <audio controls>
+            <audio key ={ this.props.question.id } controls>
               <source src={ process.env.PUBLIC_URL + this.props.question.songAudio } />
             </audio>
           </div>
