@@ -11,7 +11,7 @@ import NextButton from './NextButton';
 import {START_CATEGORY_ID, categories} from './data/categories';
 import categoriesData from './data/categoriesData';
 
-// const OPTIONS_NUMBER = 6;
+const OPTIONS_NUMBER = 6;
 
 class App extends React.Component {
   constructor() {
@@ -30,13 +30,27 @@ class App extends React.Component {
   }
 
   generateLevelData() {
-    const options = categoriesData[0].data.map((option) => {
-      option.checked = false;
-      return option;
-    })
+    // const options = categoriesData[0].data.map((option) => {
+    //   option.checked = false;
+    //   return option;
+    // })
+    // this.levelData = {
+    //   options,
+    //   answer: categoriesData[0].data[0],
+    // };
+    const allOptions = categoriesData.find((categoryData) => categoryData.categoryID === this.state.currentCategoryID).data;
+    const allOptionsNumber = allOptions.length;
+    const options = [];
+    while(options.length < OPTIONS_NUMBER) {
+      const randomIndex = Math.floor(Math.random() * allOptionsNumber);
+      if(!options.find((option) => option.id === allOptions[randomIndex].id)) {
+        options.push(allOptions[randomIndex]);
+      }
+    }
+    const answerIndex = Math.floor(Math.random() * OPTIONS_NUMBER - 1);
     this.levelData = {
       options,
-      answer: categoriesData[0].data[0],
+      answer: options[answerIndex],
     };
   }
 
