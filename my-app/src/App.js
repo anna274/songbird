@@ -21,7 +21,10 @@ class App extends React.Component {
       currentOption: null,
       score: 0,
     }
-    this.levelData = {};
+    this.levelData = {
+      options: [],
+      answer: null,
+    };
     this.levelCompleted = false;
     this.generateLevelData(this.state.currentCategoryID);
     this.nextHandler = this.nextHandler.bind(this);
@@ -39,7 +42,7 @@ class App extends React.Component {
         options.push(allOptions[randomIndex]);
       }
     }
-    const answerIndex = Math.floor(Math.random() * OPTIONS_NUMBER - 1);
+    const answerIndex = Math.floor(Math.random() * (OPTIONS_NUMBER - 1));
     this.levelData = {
         options,
         answer: options[answerIndex],
@@ -68,7 +71,6 @@ class App extends React.Component {
     if (nextCategoryIndex < categories.length) {
       nextCategoryID = categories[nextCategoryIndex].id;
     }
-    console.log(nextCategoryID);
     this.generateLevelData(nextCategoryID);
     this.levelCompleted = false;
     this.setState({

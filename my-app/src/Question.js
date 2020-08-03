@@ -20,7 +20,6 @@ class Question extends React.Component {
         </div>
       );
     } else {
-      console.log(this.props.question.songAudio);
       return (
         <div className="question">
           <div className="question__img-container">
