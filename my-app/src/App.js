@@ -25,16 +25,33 @@ class App extends React.Component {
     this.levelCompleted = false;
     this.generateLevelData();
     this.nextHandler = this.nextHandler.bind(this);
-    this.generateLevelData = this.generateLevelData(this);
+    this.generateLevelData = this.generateLevelData.bind(this);
+    this.chooseOption = this.chooseOption.bind(this);
   }
 
   generateLevelData() {
+    const options = categoriesData[0].data.map((option) => {
+      option.checked = false;
+      return option;
+    })
     this.levelData = {
-      options: categoriesData[0].data,
+      options,
       answer: categoriesData[0].data[0],
     };
   }
 
+  chooseOption(optionID) {
+    const choosenOption = this.levelData.options.find((option) => option.id === optionID );
+    this.setState({
+      currentOption: choosenOption,
+    });
+    if (!this.levelCompleted) {
+      choosenOption.checked = true;
+    }
+    if ( this.levelData.answer.id === optionID ) {
+      this.levelCompleted = true;
+    }
+  }
 
   nextHandler() {
     let nextCategory = categories.findIndex(category => category.id === this.state.currentCategoryID) + 1;
@@ -60,7 +77,7 @@ class App extends React.Component {
           <GameUI categories={ categories } currentCategory={ this.state.currentCategoryID }/>
           <Question question = { this.levelData.answer } levelCompleted = { this.levelCompleted }/>
           <div className="optionField">
-            <OptionList options = { this.levelData.options }/>
+            <OptionList options = { this.levelData.options } answerID = { this.levelData.answer.id } onClick = { this.chooseOption }/>
             <OptionInfo option = { this.state.currentOption }/>
           </div>
           <NextButton onClick = {this.nextHandler}/>

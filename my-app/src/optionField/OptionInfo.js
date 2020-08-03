@@ -6,7 +6,19 @@ class OptionInfo extends React.Component {
     if (this.props.option) {
       return (
         <div className="option__info">
-          { this.props.option.title }
+          <div className="option__info__header">
+            <div className="option__info__img-container">
+              <img className="option__info__img" alt="" src={this.props.option.songImg} />
+            </div>
+            <div>
+              <p className="option__info__song">{ this.props.option.songName }</p>
+              <p className="option__info__singer">{ this.props.option.singer }</p>
+            </div>
+          </div>
+          <audio controls>
+            <source src={ process.env.PUBLIC_URL + this.props.option.songAudio } />
+          </audio>
+          <p className="option__info__description"> { this.props.option.description } </p>
         </div>
       );
     }

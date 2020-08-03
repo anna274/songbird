@@ -8,7 +8,7 @@ class OptionList extends React.Component {
       <ul className="optionList">
         {
           this.props.options.map((option) => {
-            return <Option key={ option.id } option = { option }/>;
+            return <Option key={ option.id } option = { option } answerID = { this.props.answerID } onClick = { this.props.onClick }/>;
           })
         }
       </ul>

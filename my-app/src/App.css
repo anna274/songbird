@@ -209,22 +209,60 @@
   margin-right: 2rem;
 }
 
-.option__checkbox.correct {
+.option.correct .option__checkbox {
   background-color: #CBFBCD;
 }
 
-.option__checkbox.incorrect {
+.option.incorrect .option__checkbox {
   background-color: #FF9B9B;
 }
 
 .option__info {
-  width: 40% - 1em;
-  font-size: 2.4rem;
   text-align: center;
+  width: 40%;
+  font-size: 2.4rem;
   padding: 2rem;
   background-color: #FFEBD8;
   border-radius: 2rem;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.option__info__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.option__info__img-container {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 1.5rem;
+}
+
+.option__info__img {
+  width: auto;
+  height: 100%;
+}
+
+.option__info__song {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.option__info__singer {
+  font-size: 1.8rem;
+}
+
+.option__info__description {
+  font-size: 1.6rem;
+  margin-bottom: 0;
 }
