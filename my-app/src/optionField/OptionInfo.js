@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import Player from '../Audio/Player';
 
 class OptionInfo extends React.Component {
   render() {
@@ -15,9 +16,7 @@ class OptionInfo extends React.Component {
               <p className="option__info__singer">{ this.props.option.singer }</p>
             </div>
           </div>
-          <audio key={ this.props.option.id } controls>
-            <source src={ process.env.PUBLIC_URL + this.props.option.songAudio } />
-          </audio>
+          <Player key={ this.props.option.id } src={ process.env.PUBLIC_URL + this.props.option.songAudio }/>
           <p className="option__info__description"> { this.props.option.description } </p>
         </div>
       );

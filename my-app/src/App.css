@@ -157,6 +157,10 @@
   margin-bottom: 2rem;
 }
 
+.question__info {
+  width: 80%;
+}
+
 /* answer field */
 
 .optionField {
@@ -331,4 +335,39 @@
     font-size: 2rem;
     margin-bottom: 2rem;
   }
+}
+
+/* audio */
+.rhap_volume-controls  {
+  flex: 0.35 0.5 auto !important;
+}
+
+.rhap_volume-indicator {
+  box-shadow: none;
+}
+
+.rhap_stacked .rhap_controls-section {
+  margin-top: -1rem !important;
+}
+
+.rhap_time {
+  font-size: 1.2rem !important;
+}
+
+#rhap_current-time {
+  margin-left: 6rem;
+  margin-right: 4rem;
+}
+
+.rhap_time.rhap_total-time {
+  margin-right: 11rem;
+}
+
+.rhap_progress-container {
+  width: calc(100% - 38rem) !important;
+}
+
+.rhap_container {
+  box-shadow: none;
+  border-radius: 2rem;
 }
