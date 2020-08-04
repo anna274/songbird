@@ -8,7 +8,7 @@ class GameUI extends React.Component {
     return (
       <div className="gameUI">
         <CategoryList className="gameUI" categories = {this.props.categories} currentCategory={ this.props.currentCategory }/>
-        <Score score="4"/>
+        <Score score= { this.props.score }/>
       </div>
     );
   }
