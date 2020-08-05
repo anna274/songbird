@@ -11,12 +11,12 @@ class OptionInfo extends React.Component {
             <div className="option__info__img-container">
               <img className="option__info__img" alt="" src={this.props.option.songImg} />
             </div>
-            <div>
+            <div className="option__info__title">
               <p className="option__info__song">{ this.props.option.songName }</p>
               <p className="option__info__singer">{ this.props.option.singer }</p>
+              <Player id={ this.props.option.id } src={ process.env.PUBLIC_URL + this.props.option.songAudio }/>
             </div>
           </div>
-          <Player id={ this.props.option.id } src={ process.env.PUBLIC_URL + this.props.option.songAudio }/>
           <p className="option__info__description"> { this.props.option.description } </p>
         </div>
       );

@@ -11,14 +11,14 @@ const categories = [
     id: 2,
     title: '2000s',
   },
-  // {
-  //   id: 3,
-  //   title: '2010s',
-  // },
-  // {
-  //   id: 4,
-  //   title: '2020',
-  // },
+  {
+    id: 3,
+    title: '2010s',
+  },
+  {
+    id: 4,
+    title: '2020',
+  },
 ];
 
 const START_CATEGORY_ID = 0;
