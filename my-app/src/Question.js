@@ -14,7 +14,7 @@ class Question extends React.Component {
           </div>
           <div className="question__info">
             <h3 className="question__title">{ this.props.question.singer + ' - ' + this.props.question.songName}</h3>
-            <Player key={ this.props.question.id } src={ process.env.PUBLIC_URL + this.props.question.songAudio }/>
+            <Player id={ this.props.question.id } src={ process.env.PUBLIC_URL + this.props.question.songAudio }/>
           </div>
         </div>
       );
@@ -26,7 +26,7 @@ class Question extends React.Component {
           </div>
           <div className="question__info">
             <h3 className="question__title">*******</h3>
-            <Player key={ this.props.question.id } src={ process.env.PUBLIC_URL + this.props.question.songAudio }/>
+            <Player id={ this.props.question.id } src={ process.env.PUBLIC_URL + this.props.question.songAudio }/>
           </div>
         </div>
       )  

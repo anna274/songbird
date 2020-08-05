@@ -16,7 +16,7 @@ class OptionInfo extends React.Component {
               <p className="option__info__singer">{ this.props.option.singer }</p>
             </div>
           </div>
-          <Player key={ this.props.option.id } src={ process.env.PUBLIC_URL + this.props.option.songAudio }/>
+          <Player id={ this.props.option.id } src={ process.env.PUBLIC_URL + this.props.option.songAudio }/>
           <p className="option__info__description"> { this.props.option.description } </p>
         </div>
       );

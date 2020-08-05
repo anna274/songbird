@@ -7,7 +7,7 @@ class Player extends React.Component {
   render() {
     return (
       <AudioPlayer
-        key={ this.props.key } 
+        key={ this.props.id } 
         src={ this.props.src }
         showJumpControls = { false }
         showDownloadProgress = { false }
