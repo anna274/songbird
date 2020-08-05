@@ -22,6 +22,7 @@ export default class ScoreManager {
 
   recalculateScore() {
     this.score += this.maxScoreForLevel - this.attempts;
+    this.attempts = 0;
     return this.score;
   }
 }
