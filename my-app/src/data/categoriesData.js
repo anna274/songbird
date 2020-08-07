@@ -162,7 +162,7 @@ const categoriesData = [
         songName: 'Seven Nation Army',
         singer: 'The White Stripes',
         songAudio: '/audio/plus/The White Stripes - Seven Nation Army.mp3',
-        description: '',
+        description: 'The White Stripes were an American rock duo formed in Detroit, Michigan, in 1997. The group consisted of Jack White and Meg White. After releasing several singles and three albums within the Detroit music scene, The White Stripes rose to prominence in 2002 as part of the garage rock revival scene.',
       },
       {
         id: 20,
@@ -178,7 +178,7 @@ const categoriesData = [
         songName: 'Stronger',
         singer: 'Kanye West',
         songAudio: '/audio/plus/Kanye West - Stronger.mp3',
-        description: 'Gorillaz are a British virtual band created in 1998 by musician Damon Albarn and artist Jamie Hewlett. The band primarily consists of four animated members: Stuart "2-D" Pot, Murdoc Niccals, Noodle, and Russel Hobbs.',
+        description: 'Kanye Omari West is an American rapper, producer, and fashion designer.Born in Atlanta and raised in Chicago, West was first known as a producer for Roc-A-Fella Records in the early 2000s, producing singles for several mainstream artists.',
       },
       {
         id: 22,
