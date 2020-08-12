@@ -1,0 +1,165 @@
+
+.optionField {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.optionField > * {
+  flex-basis: auto;
+  width: 50%;
+}
+
+.optionList {
+  margin: 0;
+  background-color: #FFEBD8;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+.optionList > *:first-child {
+  padding-top: 1.7rem;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.optionList > *:last-child {
+  padding-bottom: 1.7rem;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.option {
+  list-style: none;
+  width: 100%;
+  padding: 0.7rem 3rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #F9DABE;
+}
+
+.option__title {
+  width: calc(100% - 2.5rem);
+  font-size: 1.8rem;
+  line-height: 3.3rem;
+  margin: 0;
+}
+
+.option__checkbox {
+  width: 1rem;
+  height: 1rem;
+  box-sizing: border-box;
+  border: 0.1rem #000000 solid;
+  border-radius: 50%;
+  background-color: #B5B4F0;
+  margin-right: 1.5rem;
+}
+
+.option.correct .option__checkbox {
+  background-color: #CBFBCD;
+}
+
+.option.incorrect .option__checkbox {
+  background-color: #FF9B9B;
+}
+
+.option__info {
+  text-align: center;
+  font-size: 2.4rem;
+  padding: 2rem 3rem;
+  background-color: #FFEBD8;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.option__info__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.option__info__img-container {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-right: 1.5rem;
+}
+
+.option__info__img {
+  width: auto;
+  height: 100%;
+}
+
+.option__info__title {
+  width: calc(100% - 11.5rem);
+}
+
+.option__info__song {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.option__info__singer {
+  font-size: 1.6rem;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+.option__info__description {
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1020px) {
+  .optionField {
+    flex-direction: column;
+  }
+
+  .optionField > * {
+    width: 100%;
+  }
+
+  .optionList {
+    margin-bottom: 1rem;
+  }
+}
+
+@media(max-width: 600px) {
+  
+  .option__title {
+    line-height: 2.5rem;
+  }
+
+  .option__info {
+    display: block;
+    padding: 1.5rem;
+  }
+
+  .option__info__header {
+    flex-direction: column;
+  }
+
+  .option__info__img-container {
+    margin-right: 0;
+  }
+
+  .option__info__title {
+    width: 100%;
+  }
+}

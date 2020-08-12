@@ -238,7 +238,7 @@ const categoriesData = [
         songImg: 'https://avatars.yandex.net/get-music-content/1880735/3363b536.a.9095707-1/m1000x1000',
         songName: 'Leave a Light On',
         singer: 'Tom Walker',
-        songAudio: '/audio/plus/tom walker-leave a light on.mp3',
+        songAudio: '/audio/plus/tom-walker-leave-a-light-on.mp3',
         description:'Thomas Alexander Walker is a British singer-songwriter. He was trained at the stage school London College of Creative Media, and was given a contract soon after.',
       },
       {

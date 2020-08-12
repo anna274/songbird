@@ -1,0 +1,81 @@
+.App {
+  width: 1000px;
+  margin: auto;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-logo {
+  width: 15rem;
+  height: auto;
+  pointer-events: none;
+}
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* buttons */
+
+.button {
+  border: 0;
+  outline: 0;
+  padding: 1rem 2rem;
+  background-color: #0400C7;
+  border-radius: 4rem;
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.button_wide {
+  padding: 1.5rem 8rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.button_wide:hover {
+  background-color: #6e6ce9;
+}
+
+.button_disabled{
+  background-color: #B5B4F0;
+  cursor: auto;
+}
+
+.button_disabled:hover{
+  background-color: #B5B4F0;
+}
+
+@media (max-width: 1020px) {
+  .App {
+    width: 560px;
+    align-items: center;
+  }
+}
+
+@media(max-width: 600px) {
+  .App {
+    width: 300px;
+    padding: 1rem 2rem;
+  }
+
+  .App-main {
+    width: 100%;
+  }
+
+  .App-logo {
+    width: 12rem;
+  }
+
+  .button {
+    font-size: 2rem;
+    padding: 1rem;
+    width: 100%;
+  }
+}

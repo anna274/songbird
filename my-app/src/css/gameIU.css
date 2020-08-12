@@ -1,0 +1,45 @@
+.gameUI {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.categoryList > * {
+  flex: 1;
+}
+
+.category {
+  padding: 1rem 2rem;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.category__current {
+  background-color: #B5B4F0;
+  border-radius: 4rem;
+}
+
+@media (max-width: 1020px) {
+  .gameUI {
+    flex-direction: column;
+  }
+
+  .categoryList {
+    margin-bottom: 0.5rem;
+  }
+
+  .category {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+}
