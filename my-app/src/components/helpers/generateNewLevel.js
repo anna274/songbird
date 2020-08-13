@@ -2,7 +2,14 @@ import categoriesData from '../../data/categoriesData';
 const OPTIONS_NUMBER = 6;
 
 function generateNewLevel(categoryID) {
-  const allOptions = categoriesData.find((categoryData) => categoryData.categoryID === categoryID).data;
+  let allOptions = [];
+  // we need options of specific category
+  if(categoryID !== -1) {
+    allOptions = categoriesData.find((categoryData) => categoryData.categoryID === categoryID).data;
+    // we need options of all categories
+  } else {
+    categoriesData.forEach((categoryData) => allOptions.push(...categoryData.data))
+  }
   const allOptionsNumber = allOptions.length;
   let options = [];
   while(options.length < OPTIONS_NUMBER) {

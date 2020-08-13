@@ -19,6 +19,10 @@ const categories = [
     id: 4,
     title: '2020',
   },
+  {
+    id: -1,
+    title: 'Blitz',
+  }
 ];
 
 const START_CATEGORY_ID = 0;
