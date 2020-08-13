@@ -1,0 +1,51 @@
+.result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4rem;
+  padding: 4rem;
+  background-color: #FFEBD8;
+  box-sizing: border-box;
+}
+
+.result__score {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.result__congrats {
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  width: 80%;
+}
+
+.result__gif {
+  width: 30rem;
+  height: auto;
+  border: none;
+}
+
+@media(max-width: 600px) {
+
+  .result__gif {
+    width: 20rem;
+  }
+
+  .result__score {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .result__congrats {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}

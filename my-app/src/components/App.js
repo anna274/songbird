@@ -7,7 +7,7 @@ import Question from './questionField/Question';
 import OptionList from './optionField/OptionList';
 import OptionInfo from './optionField/OptionInfo';
 import NextButton from './nextButton/NextButton';
-import Modal from './modal/Modal';
+import Result from './result/Result';
 import {START_CATEGORY_ID, categories} from '../data/categories';
 import { generateNewLevel, OPTIONS_NUMBER } from './helpers/generateNewLevel';
 import ScoreManager from './helpers/ScoreManager';
@@ -87,6 +87,7 @@ class App extends React.Component {
     this.scoreManager.resetScore();
     this.levelData = generateNewLevel(START_CATEGORY_ID);
     this.levelCompleted = false;
+    this.lastAnswerIsRight = false;
     this.setState({
       currentCategoryID: START_CATEGORY_ID,
       currentOption: null,
@@ -96,6 +97,19 @@ class App extends React.Component {
   }
 
   render() {
+    if(this.state.gameOver) {
+      return (
+        <div className="App">
+          <header className="App-header">
+            <img src={  process.env.PUBLIC_URL + LOGO_URL } className="App-logo" alt="logo" />
+          </header>
+          <main className="App-main">
+            <GameUI categories={ categories } currentCategory={ START_CATEGORY_ID } score = { this.state.score }/>
+            <Result result = { this.state.score } maxResult = { this.scoreManager.getMaxScore() } restartGame = { this.restartGame }/>
+          </main>
+        </div>
+      );
+    }
     return (
       <div className="App">
         <header className="App-header">
@@ -110,7 +124,6 @@ class App extends React.Component {
           </div>
           <NextButton levelCompleted = { this.levelCompleted } onClick = {this.nextHandler}/>
         </main>
-        <Modal show = { this.state.gameOver } result = { this.state.score } maxResult = { this.scoreManager.getMaxScore() } restartGame = { this.restartGame }/>
       </div>
     );
   }

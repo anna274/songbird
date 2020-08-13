@@ -2,6 +2,16 @@
   flex: 0.35 0.5 auto !important;
 }
 
+.rhap_volume-button {
+  background-color: transparent !important;
+}
+
+.rhap_button-clear {
+  background-color: #868686;
+  border: none;
+  border-radius: 50%;
+}
+
 .rhap_stacked .rhap_controls-section {
   margin-top: -1rem !important;
 }
@@ -25,11 +35,12 @@
 
 .rhap_container {
   box-shadow: none;
-  border-radius: 2rem;
+  border-radius: 4rem;
 }
 
 .rhap_main-controls-button {
   margin: 0;
+  color: #FFFFFF;
 }
 
 .option__info .rhap_container {
